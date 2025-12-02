@@ -1,0 +1,18 @@
+//OPTIIMIZED SOLUTIOM
+
+const fs = require("fs");
+var text = fs.readFileSync("data.txt", "utf8");
+var data = text.split("\n");
+
+let pos = 50, part1 = 0, part2 = 0;
+for (const move of data) {
+    const rot = move.slice(1) * (move[0] == "L" ? -1 : 1)
+    const nPos = (pos + rot + 100) % 100;
+    part1 += nPos === 0;
+    part2 += rot > 0
+        ? Math.floor((pos + rot) / 100) - Math.floor(pos / 100)
+        : Math.floor((pos - 1) / 100) - Math.floor((pos - 1 + rot) / 100)
+    pos = nPos;
+}
+
+console.log({ part1, part2 });
