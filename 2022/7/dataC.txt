@@ -1,0 +1,49 @@
+$ cd /
+$ ls
+dir A
+dir B
+dir C
+dir D
+307337 pnm.slh
+dir E
+dir F
+212421 zcrfndg.cms
+$ cd A
+$ ls
+179236 lccnhn
+$ cd ..
+$ cd B
+$ ls
+221336 gdjfp.mfp
+273114 jjgpvcqv.jlq
+$ cd ..
+$ cd C
+$ ls
+dir G
+dir H
+dir I
+1606 mgvdbtl.ztt
+dir J
+27538 wprqtd.wph
+$ cd G
+$ ls
+dir H
+dir A
+dir J
+186683 lccnhn
+dir K
+32944 zjfs.mdf
+$ cd H
+$ ls
+211273 nvns
+$ cd ..
+$ cd A
+$ ls
+dir L
+210022 dtqvbspj
+dir M
+189603 pnm.slh
+199755 rcsffv.gbt
+$ cd L
+$ ls
+292856 bsnqsfm.vww

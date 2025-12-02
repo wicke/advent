@@ -1,0 +1,97 @@
+$ cd /
+$ ls
+    dir AAAAAAAAAAA
+    dir BBBBBBBBBBB
+    dir CCCCCCCCCCC
+    dir EEEEEEEEEEE
+    307337 pnm.slh
+    dir FFFFFFFFFFF
+    dir GGGGGGGGGGG
+    212421 zcrfndg.cms
+$ cd AAAAAAAAAAA
+$ ls
+    179236 lccnhn
+$ cd ..
+$ cd BBBBBBBBBBB
+$ ls
+    221336 gdjfp.mfp
+    273114 jjgpvcqv.jlq
+$ cd ..
+$ cd CCCCCCCCCCC
+$ ls
+    dir H
+    dir jjgpvcqv
+    dir mgvdbtl
+    1606 mgvdbtl.ztt
+    dir qhv
+    27538 wprqtd.wph
+    $ cd H
+    $ ls
+        dir bgcwh
+        dir bsnqsfm
+        dir jjgpvcqv
+        186683 lccnhn
+        dir rqbnd
+        32944 zjfs.mdf
+        $ cd bgcwh
+        $ ls
+            211273 nvns
+        $ cd ..
+        $ cd bsnqsfm
+        $ ls
+            dir bsnqsfm
+            210022 dtqvbspj
+            dir gpcpgfh
+            189603 pnm.slh
+            199755 rcsffv.gbt
+            $ cd bsnqsfm
+            $ ls
+                292856 bsnqsfm.vww
+                $ cd ..
+                $ cd gpcpgfh
+                $ ls
+                    177703 jrr.jnj
+        $ cd ..
+        $ cd ..
+        $ cd jjgpvcqv
+        $ ls
+            233963 bsnqsfm.fnn
+            127603 gpcpgfh.gtw
+            dir jjgpvcqv
+            48213 jrs.bdw
+            172974 pnm.slh
+            $ cd jjgpvcqv
+            $ ls
+                dir bqnctqvn
+                dir bsnqsfm
+                dir gpcpgfh
+                254570 qpmnqwvl
+                258040 rrvjrv.zbp
+                $ cd bqnctqvn
+                $ ls
+                    106211 bsnqsfm.pql
+                    299973 dtqvbspj
+                    dir nzrst
+                    $ cd nzrst
+                    $ ls
+                        dir whtfvrl
+                        $ cd whtfvrl
+                        $ ls
+                            12412 vzdrqs.rwt
+                $ cd ..
+                $ cd ..
+                $ cd ..
+                $ cd bsnqsfm
+                $ ls
+                    293832 bggllqhj.dvb
+$ cd ..
+$ cd gpcpgfh
+$ ls
+    196159 jrr.jnj
+$ cd ..
+$ cd ..
+$ cd ..
+$ cd rqbnd
+$ ls
+    97630 ddjrjp
+    56378 rsb

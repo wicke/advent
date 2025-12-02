@@ -1,0 +1,108 @@
+OPPONENT
+A Rock
+B Paper
+C Scissors
+---
+RESPONSE
+X Rock
+Y Paper
+Z Scissors
+---
+SCORING: per round
+SHAPE (ROCK=1, PAPER=2, SCISSORS=3) 
+ + OUTCOME (LOSS=0, DRAW=3, WIN=6)
+---
+
+EG:
+A Y
+B X
+C Z
+
+- First Round Opponent Chooses A(ROCK) YOU SHOULD CHOOSE PAPER(Y)
+- THIS IS A WIN FOR YOU 
+- SCORE 8 = PAPER(2)+WIN(6)
+
+- SECOND ROUND: Opponent Chooses B(PAPER) YOU SHOULD CHOOSE ROCK(X)
+- THIS IS A LOSS
+- SCORE 1 = ROCK(1)+LOSS(0)
+
+THIRD ROUND: Opponent Chooses C(SCISSORS) YOU SHOULD CHOOSE SCISSORS(Z)
+- THIS IS A DRAW
+- SCORE 6 = SCISSORS(3)+DRAW(3)
+
+TOTAL SCORE: 15 (8+1+6)
+
+
+OPPONENT
+A Rock
+B Paper
+C Scissors
+---
+RESPONSE
+X Rock
+Y Paper
+Z Scissors
+
+res(1,1)=4 A X = DRAW (1 + 3 = 4).
+res(1,2)=8 A Y = WIN (2 + 6 = 8).
+res(1,3)=3 A Z = LOSS (3 + 0 = 3).
+res(2,1)=1 B X = LOSS (1 + 0 = 1).
+res(2,2)=5 B Y = DRAW (2 + 3 = 5).
+res(2,3)=9 B Z = WIN (3 + 6 = 9).
+res(3,1)=7 C X = WIN (1 + 6 = 7).
+res(3,2)=2 C Y = LOSS (2 + 0 = 2).
+res(3,3)=6 C Z = DRAW (3 + 3 = 6).
+
+res(21)=1 BX = LOSS (1 + 0 = 1).
+res(32)=2 CY = LOSS (2 + 0 = 2).
+res(13)=3 AZ = LOSS (3 + 0 = 3).
+res(11)=4 AX = DRAW (1 + 3 = 4).
+res(22)=5 BY = DRAW (2 + 3 = 5).
+res(33)=6 CZ = DRAW (3 + 3 = 6).
+res(31)=7 CX = WIN (1 + 6 = 7).
+res(12)=8 AY = WIN (2 + 6 = 8).
+res(23)=9 BZ = WIN (3 + 6 = 9).
+
+
+---
+ROUND 2
+---
+X means you need to lose
+Y means you need to draw
+Z means you need to win 
+
+Figure out the shape to choose so the
+round ends as indicated
+
+EG:
+A Y
+B X
+C Z
+
+- FIRST ROUND is Y=DRAW :: OPP chooses A(ROCK), so you need to choose X(ROCK)
+- SCORE 4 = ROCK(1) + DRAW(3)
+
+- SECOND ROUND is X=LOSE :: OPP chooses B(PAPER), so you need to choose X()
+- SCORE 4 = ROCK(1) + DRAW(3)
+
+- THIRD ROUND is Z=DRAW :: OPP chooses A(ROCK), so you need to choose X(ROCK)
+- SCORE 4 = ROCK(1) + DRAW(3)
+
+SHAPE (ROCK=1, PAPER=2, SCISSORS=3) 
+ + OUTCOME (LOSS=0, DRAW=3, WIN=6)
+
+X=LOSE
+(11)AX:ROCK|LOSE=SCISSORS(3) == SCISSORS(3)+LOSE(0) = 3
+(21)BX:PAPER|LOSE=ROCK(1) == ROCK(1)+LOSE(0) = 1 
+(31)CX:SCISSORS|LOSE=PAPER(2) == PAPER(2)+LOSE(0) = 2
+
+Y=DRAW
+(12)AY:ROCK|DRAW=ROCK(1) + DRAW(3) = 4
+(22)BY:PAPER|DRAW=PAPER(2) + DRAW(3) = 5
+(32)CY:SCISSORS|DRAW=SCISSORS(3) + DRAW(3) = 6
+
+Z=WIN
+(13)AZ:ROCK|WIN=PAPER(2) + WIN(6) = 8
+(23)BZ:PAPER|WIN=SCISSORS(3) + WIN(6) = 9
+(33)CZ:SCISSORS|WIN=ROCK(1) + WIN(6) = 7
+

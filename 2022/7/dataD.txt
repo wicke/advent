@@ -1,0 +1,15 @@
+dir A
+dir B
+$ cd A
+$ ls
+12345 file.txt
+$ cd ..
+$ cd B
+dir C
+dir D
+$ cd C
+$ ls
+999 f1.txt
+cd ..
+cd D
+444 file.dat
