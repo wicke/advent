@@ -1,11 +1,10 @@
 const fs = require("fs");
-var text = fs.readFileSync("data.txt", "utf8");
-var data = text.split("\r\n");
+var text = fs.readFileSync("data1.txt", "utf8");
+var data = text.split("\n");
 
 var currentLocation = 50;
 var newLocation = 50;
 console.log("=============================");
-console.log("START: " + currentLocation);
 var passwordCount = 0;
 var zeroPass = 0;
 
@@ -14,76 +13,67 @@ data.map((rotation) => {
   if (match) {
     var startLocation = currentLocation;
     const direction = match[1];
-    const originalClicks = parseInt(match[2], 10);
     const clicks = parseInt(match[2], 10);
-    const cleanClicks = clicks % 100;
+    const adjustedClicks = clicks % 100;
     const leadingDigits = Math.floor(clicks / 100);
-    console.log("START:" + startLocation);
-    // console.log("LEADING: " + leadingDigits);
-    var passedZero = false;
-
-    // console.log(`ROTATION ${rotation} :: ${direction}->${clicks}`);
 
     if (direction == "R") {
-      orignialLocation = currentLocation + clicks;
-      newLocation = currentLocation + cleanClicks;
-      console.log("ORIGINAL LOCATION: " + orignialLocation);
-      console.log("CLEAN LOCATION: " + newLocation);
-      if (newLocation > 99) {
+
+      newLocation = currentLocation + clicks;
+
+      if (clicks > 100) {
+        // DETERMINE ACTUAL ADJUSTED      
+        newLocation = currentLocation + adjustedClicks;
+        zeroPass += leadingDigits;
+      }
+
+      if (newLocation === 100) {
+        newLocation = 0;
+      } else if (newLocation > 100) {
         newLocation -= 100;
-        console.log("PASSED ZERO TO " + newLocation);
-        if (newLocation != 0 && startLocation != 0) {
-          passedZero = true;
-          console.log(originalClicks);
-          if (originalClicks > 99) {
-            //zeroPass = leadingDigits;
-            console.log(
-              "GREATER THAN 100: " + originalClicks + "::" + leadingDigits
-            );
-          } else {
-            zeroPass++;
-          }
+        if (currentLocation != 0) {
+          zeroPass++;
         }
       }
 
       currentLocation = newLocation;
+
     } else if (direction == "L") {
-      orignialLocation = currentLocation - clicks;
-      newLocation = currentLocation - cleanClicks;
-      console.log("ORIGINAL LOCATION: " + orignialLocation);
-      console.log("CLEAN LOCATION: " + newLocation);
-      if (newLocation < 0) {
+
+      newLocation = currentLocation - clicks;
+
+      //ADJUST IF THERE ARE MORE THAN 100 CLICKS
+      if (clicks > 100) {
+        // DETERMINE ACTUAL ADJUSTED
+        newLocation = currentLocation - adjustedClicks;
+        zeroPass += leadingDigits;
+      }
+
+      if (newLocation === 100) {
+        newLocation = 0;
+      } else if (newLocation < 0) {
         newLocation += 100;
-        console.log("PASSED ZERO TO " + newLocation);
-        if (newLocation != 0 && startLocation != 0) {
-          if (originalClicks > 99) {
-            console.log(
-              "GREATER THAN 100: " + originalClicks + "::" + leadingDigits
-            );
-            zeroPass += leadingDigits;
-          } else {
-            zeroPass++;
-          }
-          passedZero = true;
+        if (currentLocation != 0) {
+          zeroPass++;
         }
       }
       currentLocation = newLocation;
     }
+
     if (currentLocation == 0) {
       passwordCount++;
-      console.log("STOPPED ON 0");
     }
+
     console.log(
       `THE DIAL STARTED AT ${startLocation} IS ROTATED ${direction}->${clicks} TO POINT ${currentLocation} `
     );
-    if (passedZero) {
-      console.log("PASSED ZERO");
-    }
+
   } else {
     console.log("NOT A MATCH");
   }
   console.log("--------------------------------");
 });
+
 console.log("PASSWORD COUNT: " + passwordCount);
 console.log("ZERO COUNT: " + zeroPass);
 console.log(
