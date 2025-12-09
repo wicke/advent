@@ -1,8 +1,10 @@
 const fs = require("fs");
-var text = fs.readFileSync("data1.txt", "utf8");
+var text = fs.readFileSync("data.txt", "utf8");
 var data = text.split("\r\n");
 
 var gridBoard = Array.from({ length: data.length }, () => Array(140).fill("."));
+var xBoard = gridBoard;
+console.log(xBoard);
 const ROWS = gridBoard.length;
 const COLS = gridBoard[0].length;
 
@@ -39,45 +41,31 @@ const countPopulatedNeighbours = (row, col) => {
   return neighbourCount < 4;
 };
 
+//INITIALIZE
 for (const [index, rows] of data.entries()) {
   for (var i = 0; i < rows.length; i++) {
     gridBoard[index][i] = rows[i];
   }
 }
 
-var changesMade = true;
+// RUN CHECKS
 var accessCount = 0;
-
-while (changesMade) {
-  changesMade = false;
-  const cellsToReplace = [];
-
-  for (const [r, row] of gridBoard.entries()) {
-    for (const [c, currentCell] of row.entries()) {
-      if (currentCell === "@") {
-        const cellCount = countPopulatedNeighbours(r, c);
-        if (cellCount === true) {
-          cellsToReplace.push({ row: r, col: c });
-          accessCount++;
-        }
+//for (const [col, rows] of data.entries()) {
+for (var col = 0; col < xBoard; col++) {
+  for (var i = 0; i < rows.length; i++) {
+    currentCell = gridBoard[col][i];
+    if (currentCell === "@") {
+      const cellCount = countPopulatedNeighbours(col, i);
+      console.log(col, i);
+      if (cellCount === true) {
+        // REMOVE PAPER
+        console.log(`----> REMOVE ${col},${i}`);
+        // gridBoard[col][i] = ".";
+        accessCount++;
       }
     }
   }
-  if (cellsToReplace.length > 0) {
-    // We made changes, so set the flag to true to run another pass
-    changesMade = true;
-
-    // Apply the replacements to the grid
-    for (const cell of cellsToReplace) {
-      gridBoard[cell.row][cell.col] = ".";
-    }
-
-    console.log(
-      `Pass completed. ${cellsToReplace.length} cells were replaced.`
-    );
-  } else {
-    console.log("Pass completed. 0 cells were replaced. Grid is stable.");
-  }
+  //   /newBoard[col][i] = gridBoard[col][i];
 }
 
 console.log("========");
